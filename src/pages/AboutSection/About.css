@@ -1,0 +1,502 @@
+/* Global Box-Sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Container for the About Page */
+.about-container {
+  background: linear-gradient(to bottom, #f0f8ff, #ffffff);
+  min-height: 100vh;
+  padding-bottom: 50px;
+  width: 100%; /* Ensure container fits viewport */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+/* Hero Section with Unique Class */
+.about-hero {
+  position: relative;
+  background-image: url('/public/uploadimage-background.jpeg');
+  background-position: center;
+  background-size: cover;
+  background-attachment: scroll; /* Removed fixed */
+  color: #fff;
+  padding: 120px 20px;
+  text-align: center;
+  overflow: hidden;
+  width: 100%; /* Ensure it fits viewport */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeInHero 1s forwards;
+  max-width: 100%; /* Prevent overflow */
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.about-hero p {
+  font-size: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Project Overview Section */
+.project-overview,
+.mission,
+.about-team {
+  margin: 60px 0;
+  text-align: center;
+  padding: 0 20px;
+  width: 100%; /* Ensure sections fit viewport */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.project-overview h2,
+.mission h2,
+.about-team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #2e7d32;
+  position: relative;
+}
+
+.project-overview h2::after,
+.mission h2::after,
+.about-team h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #2e7d32;
+  margin: 10px auto;
+}
+
+.project-overview p,
+.mission p,
+.about-team p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Timeline Section */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 60px 0;
+  padding: 0 20px;
+  position: relative;
+  width: 100%; /* Ensure it fits viewport */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.timeline h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #2e7d32;
+  position: relative;
+}
+
+.timeline h2::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #2e7d32;
+  margin: 10px auto;
+}
+
+.timeline-item {
+  display: flex;
+  margin-bottom: 40px;
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.6s ease-out;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+  transform: translateX(50px);
+}
+
+.timeline-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  margin: 0 20px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 20px;
+  height: 20px;
+  background: #007bff;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+.timeline-item:nth-child(even) .timeline-content::before {
+  left: -10px;
+}
+
+.timeline-item:nth-child(odd) .timeline-content::before {
+  right: -10px;
+}
+
+.timeline-item h3 {
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  color: #2e7d32;
+}
+
+.timeline-item p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.timeline-item.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Down Arrow Between Timeline Items */
+.timeline-item::after {
+  content: '⬇️';
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  color: #007bff;
+  z-index: 1;
+}
+
+.timeline-item:last-child::after {
+  display: none; /* Hide on last item */
+}
+
+/* About the Team Section with Hover Effects */
+.about-team {
+  background: linear-gradient(135deg, #e9e9e9, #f0f8ff);
+  padding: 60px 20px;
+  width: 100%; /* Ensure it fits viewport */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  width: 100%; /* Ensure it fits viewport */
+  max-width: 100%; /* Prevent overflow */
+}
+
+.team-member {
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.team-member.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 220px;
+  height: 280px;
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover img {
+  opacity: 0.7;
+}
+
+.card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-info {
+  transform: translateY(0);
+}
+
+.card-info h4 {
+  margin: 0 0 5px;
+  font-size: 1.2rem;
+}
+
+.card-info p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeInHero {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .about-hero {
+    padding: 80px 15px; /* Reduced horizontal padding */
+  }
+
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero p {
+    font-size: 1.2rem;
+    max-width: 90%;
+  }
+
+  .project-overview,
+  .mission,
+  .about-team {
+    margin: 40px 0;
+    padding: 0 15px; /* Reduced padding */
+  }
+
+  .project-overview h2,
+  .mission h2,
+  .about-team h2 {
+    font-size: 2rem;
+  }
+
+  .project-overview p,
+  .mission p,
+  .about-team p {
+    font-size: 1rem;
+    max-width: 100%; /* Ensure it fits viewport */
+  }
+
+  .timeline {
+    padding: 0 15px; /* Reduced padding */
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    width: calc(100% - 30px); /* Subtract padding (15px left + 15px right) */
+    max-width: calc(100% - 30px); /* Prevent overflow */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .timeline-item:nth-child(odd) {
+    flex-direction: column;
+    transform: translateX(0);
+  }
+
+  .timeline-item::after {
+    left: 50%;
+  }
+
+  .timeline-icon {
+    margin: 0 0 10px 10px;
+  }
+
+  .timeline-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .timeline-content::before {
+    display: none;
+  }
+
+  .timeline-item h3 {
+    font-size: 1.3rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.9rem;
+  }
+
+  .about-team {
+    padding: 40px 15px; /* Reduced padding */
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .card {
+    width: 180px;
+    height: 220px;
+  }
+
+  .card-info h4 {
+    font-size: 1rem;
+  }
+
+  .card-info p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .about-hero {
+    padding: 60px 10px; /* Further reduced padding */
+  }
+
+  .about-hero h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero p {
+    font-size: 1rem;
+  }
+
+  .project-overview h2,
+  .mission h2,
+  .about-team h2,
+  .timeline h2 {
+    font-size: 1.8rem;
+  }
+
+  .project-overview p,
+  .mission p,
+  .about-team p {
+    font-size: 0.9rem;
+  }
+
+  .timeline {
+    padding: 0 10px; /* Further reduced padding */
+  }
+
+  .timeline-item {
+    width: calc(100% - 20px); /* Subtract padding (10px left + 10px right) */
+    max-width: calc(100% - 20px); /* Prevent overflow */
+  }
+
+  .timeline-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-item p {
+    font-size: 0.85rem;
+  }
+
+  .timeline-item::after {
+    font-size: 1.2rem;
+  }
+
+  .about-team {
+    padding: 40px 10px; /* Further reduced padding */
+  }
+
+  .card {
+    width: 160px;
+    height: 200px;
+  }
+
+  .card-info h4 {
+    font-size: 0.9rem;
+  }
+
+  .card-info p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Global Overflow Prevention */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}

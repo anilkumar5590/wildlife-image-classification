@@ -1,0 +1,322 @@
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 24px;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Navigation Styling */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+/* Nav Links */
+nav ul li {
+  display: inline;
+}
+
+nav ul li a,
+.nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+.nav-link:hover {
+  color: #ffdd57;
+}
+
+/* User Profile */
+.user-profile {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* User Avatar */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background: white;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px;
+  max-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+  z-index: 20;
+  box-sizing: border-box;
+}
+
+/* Show dropdown when menu is open */
+.user-menu:hover .dropdown-menu,
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0s;
+}
+
+/* Dropdown Buttons */
+.dropdown-menu p {
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.dropdown-menu button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  width: 90%;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 5px 0;
+  transition: background 0.3s ease-in-out;
+  box-sizing: border-box;
+}
+
+.dropdown-menu button:hover {
+  background: #0056b3;
+}
+
+/* Hamburger Menu Icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Toggle Animation */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    padding: 10px 20px;
+    max-width: 100vw;
+    flex-direction: row; /* Keep on the same row */
+    justify-content: space-between; /* Ensure logo and hamburger are on edges */
+    align-items: center;
+    position: relative;
+  }
+
+  /* Logo Styling in Mobile */
+  .logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex: 1; /* Take available space on the left */
+  }
+
+  .logo h1 {
+    padding-left: 10px; /* Padding from the left */
+    font-size: 18px; /* Smaller for mobile */
+    margin: 0;
+  }
+
+  nav {
+    display: none; /* Hide navigation completely */
+  }
+
+  .user-profile {
+    display: none; /* Hide user profile completely */
+  }
+
+  .hamburger {
+    display: flex;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 0;
+    padding: 0;
+  }
+
+  /* Mobile Navigation Menu */
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Adjusted for header height */
+    right: 0;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 15;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  .mobile-nav ul li {
+    margin: 15px 0;
+  }
+
+  .mobile-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    overflow-wrap: break-word;
+  }
+
+  .mobile-nav .user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+
+  .mobile-nav .user-profile p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .mobile-nav .user-profile button {
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 8px 0;
+    text-align: left;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  .mobile-nav .user-profile button:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav .user-profile .nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 8px 0;
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .mobile-nav .user-profile .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 8px 15px; /* Further reduce padding for smaller screens */
+  }
+
+  .logo h1 {
+    font-size: 16px; /* Even smaller for very small screens */
+  }
+
+  .hamburger div {
+    width: 20px; /* Smaller hamburger icon */
+    height: 2px;
+    margin: 3px 0;
+  }
+
+  .mobile-nav {
+    top: 50px; /* Adjusted for smaller header height */
+    padding: 15px;
+  }
+
+  .mobile-nav ul li a {
+    font-size: 16px; /* Smaller font size for links */
+  }
+
+  .mobile-nav .user-profile p {
+    font-size: 16px;
+  }
+
+  .mobile-nav .user-profile button,
+  .mobile-nav .user-profile .nav-link {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+}
+
+/* Global Overflow Prevention */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}

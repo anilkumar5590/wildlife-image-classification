@@ -1,0 +1,192 @@
+/* Section Styles */
+.featured-species {
+  padding: 50px 20px;
+  background-color: #f0f8ff;
+  background-image: url('/public/featuredspecies-background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  border-radius: 15px;
+  box-sizing: border-box; /* Include padding in width */
+  width: 100%; /* Explicitly full width */
+}
+
+/* Title */
+.featured-species .title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  text-align: center;
+}
+
+/* Container for species cards */
+.species-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  justify-items: center;
+  align-items: center;
+  padding: 0 10%;
+  width: 100%; /* Constrain to parent */
+  max-width: 100%; /* Prevent overflow */
+  box-sizing: border-box; /* Include padding */
+}
+
+/* Species Card */
+.species-card {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 350px;
+  transition: transform 0.3s ease-in-out;
+  box-sizing: border-box; /* Contain padding */
+  overflow-wrap: break-word; /* Break long text */
+}
+
+.species-card:hover {
+  transform: scale(1.05);
+}
+
+/* Species Image */
+.species-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #4CAF50;
+}
+
+/* Species Info */
+.species-info {
+  padding: 20px;
+}
+
+.species-info h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Conservation Status */
+.conservation-status {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #FFD700;
+  margin-bottom: 15px;
+}
+
+/* Species Description */
+.species-description {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .species-container {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 992px) {
+  .species-container {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 5%;
+  }
+
+  .featured-species .title {
+    font-size: 2.2rem;
+  }
+
+  .species-info h3 {
+    font-size: 1.6rem;
+  }
+
+  .conservation-status {
+    font-size: 1.1rem;
+  }
+
+  .species-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .species-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 0 5%;
+  }
+
+  .featured-species .title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+
+  .species-card {
+    max-width: 300px;
+  }
+
+  .species-image {
+    height: 200px;
+  }
+
+  .species-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .conservation-status {
+    font-size: 1rem;
+  }
+
+  .species-description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .featured-species {
+    padding: 30px 10px; /* Reduce padding for mobile */
+    max-width: 100vw; /* Cap at viewport */
+  }
+
+  .species-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 5%;
+  }
+
+  .featured-species .title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+
+  .species-card {
+    max-width: 100%;
+  }
+
+  .species-image {
+    height: 180px;
+  }
+
+  .species-info h3 {
+    font-size: 1.4rem;
+  }
+
+  .conservation-status {
+    font-size: 0.95rem;
+  }
+
+  .species-description {
+    font-size: 0.85rem;
+  }
+}
+
+/* Global Overflow Prevention (Add at top if not already present) */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}

@@ -1,0 +1,158 @@
+/* Hero Section (Full Screen) */
+.hero {
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('/public/hero-background.avif'); /* High-quality wildlife image */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Dark Overlay to Improve Readability */
+.hero-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark transparent overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content Inside the Hero Section */
+.hero-content {
+  max-width: 700px;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1.5s ease-in-out; /* Smooth fade-in effect */
+}
+
+/* Hero Heading */
+.hero-content h1 {
+  font-size: 50px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Hero Description */
+.hero-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Upload Button */
+.hero-button {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 20px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center button content */
+  gap: 10px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin: 0 auto; /* Center the button */
+}
+
+/* Camera Icon */
+.button-icon {
+  font-size: 22px;
+}
+
+/* Button Hover Effect */
+.hero-button:hover {
+  background-color: #2e7d32;
+  transform: scale(1.05);
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  /* Adjust for large tablets and small desktops */
+  .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .hero-content p {
+    font-size: 18px;
+  }
+
+  .hero-button {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  /* Adjust for tablets */
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Adjust for small tablets and large phones */
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  .hero-button {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Adjust for mobile devices */
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-content p {
+    font-size: 12px;
+  }
+
+  .hero-button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .button-icon {
+    font-size: 16px;
+  }
+}

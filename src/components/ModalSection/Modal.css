@@ -1,0 +1,234 @@
+/* Global Overflow Prevention */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Modal Overlay (Unchanged) */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* Modal Content (Unchanged) */
+.modal-content {
+  background: white;
+  padding: 20px;
+  width: 50%;
+  max-width: 90vw;
+  border-radius: 10px;
+  position: relative;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* Close Button (Unchanged) */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #000;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  z-index: 1001;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Title (Unchanged) */
+.modal-content h2 {
+  font-size: 1.5rem;
+  margin: 0 0 15px 0;
+  color: #333;
+  text-align: center;
+}
+
+/* Modal Body (Unchanged) */
+.modal-body {
+  max-height: 60vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Footer Styling */
+footer {
+  padding: 20px;
+  padding-left: 25%;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100vw;
+  display: block; /* Remove flex centering in desktop */
+}
+
+/* Footer Paragraph */
+footer p {
+  margin: 0;
+  font-size: 1rem;
+  color: #333;
+  text-align: left; /* Left-align content in desktop */
+}
+
+/* Footer Items */
+.contact-mail {
+  padding-left: 15px;
+}
+
+/* Generic Link Styling */
+.link {
+  cursor: pointer;
+  color: blue;
+  text-decoration: underline;
+  padding-left: 10px;
+}
+
+/* Specific Styling for Privacy and Terms of Service */
+footer .privacy-link,
+footer .terms-link {
+  color: #007bff;
+  text-decoration: underline; /* Subtle underline instead of background */
+  padding: 0 4px; /* Minimal padding for spacing */
+  transition: color 0.3s ease;
+}
+
+footer .privacy-link:hover,
+footer .terms-link:hover,
+footer .privacy-link:focus,
+footer .terms-link:focus {
+  color: #004085; /* Darker blue for contrast */
+  text-decoration: underline;
+  background: none; /* Remove background for cleaner look */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .modal-content {
+    width: 60%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+
+  .modal-body {
+    font-size: 0.95rem;
+  }
+
+  footer {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .modal-content {
+    width: 70%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
+
+  .modal-body {
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
+  footer p {
+    text-align: center; /* Center on smaller screens */
+    display: block; /* Reset to block for natural flow */
+  }
+
+  .contact-mail,
+  .link,
+  .privacy-link,
+  .terms-link {
+    padding-left: 0;
+    display: inline-block; /* Keep inline flow with spacing */
+    margin: 5px 0; /* Add vertical spacing */
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 80%;
+    padding: 15px;
+  }
+
+  .close-button {
+    font-size: 18px;
+    top: 8px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal-body {
+    font-size: 0.85rem;
+    max-height: 50vh;
+  }
+
+  footer {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .close-button {
+    font-size: 16px;
+    top: 5px;
+    right: 8px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .modal-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal-body {
+    font-size: 0.8rem;
+    max-height: 45vh;
+  }
+
+  footer {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  footer p {
+    font-size: 0.9rem;
+  }
+}

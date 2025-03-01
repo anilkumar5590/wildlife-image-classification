@@ -1,0 +1,92 @@
+/* index.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0; /* Add this for extra safety */
+  overflow-x: hidden; /* Prevent horizontal scroll globally */
+}
+
+header {
+  background-color: #4CAF50;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* Explicitly constrain to viewport */
+  box-sizing: border-box; /* Include padding in width */
+}
+
+header nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Ensure nav respects container width */
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box; /* Ensure padding doesn’t bloat width */
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Tablet View */
+@media screen and (max-width: 768px) {
+  header {
+    padding: 8px 15px;
+    flex-direction: row;
+    width: 100%; /* Reinforce width constraint */
+  }
+
+  header nav ul li {
+    margin: 0 8px;
+  }
+
+  button {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile View */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 5px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%; /* Keep it full width */
+    max-width: 100vw; /* Cap at viewport width */
+  }
+
+  header nav ul {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  header nav ul li {
+    display: block;
+    margin: 5px 0;
+    padding: 5px 0;
+    width: 100%; /* Ensure li fills container */
+    box-sizing: border-box; /* Contain padding/margins */
+    overflow-wrap: break-word; /* Break long words to prevent overflow */
+  }
+
+  button {
+    padding: 6px 12px;
+    font-size: 12px;
+    width: 100%;
+    margin: 5px 0;
+  }
+}
